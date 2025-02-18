@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 300px;
+            height: auto;
+            cursor: pointer;
+        }
+
+        body {
+            background-image: url("../static/images/parc_des_princes.jpg");  ;
+        }
+    </style>
+</head>
+<body>
+    <h1>Gianluigi Donnarumma #1</h1>
+    <img id="image" width="500" height="500" src="../static/images/donnarumma2.png" onclick="changerImage()">
+    
+    <script>
+        function changerImage() {
+            var img = document.getElementById("image");
+            if (img.src.endsWith("donnarumma2.png")) {
+                img.src = "../static/images/donnarumma.avif";
+            } else {
+                img.src = "../static/images/donnarumma2.png";
+            }
+        }
+    </script>
+</body>
