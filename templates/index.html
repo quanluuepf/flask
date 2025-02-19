@@ -7,72 +7,98 @@
     <style>
         body {
             background-image: url("../static/images/parc_des_princes.jpg");  
+            background-attachment: fixed;
             color: white;
             
+        }
+
+        .select {
+            background-image: url('data:image/svg+xml;utf8,<svg fill="%234a90e2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5H7z"/></svg>');
+            background-repeat: no-repeat;
+            background-position: right 10px center;
+            background-size: 16px;
+            padding-right: 35px;
+            color: #333;
+            cursor: pointer;
+            outline: none;
+            transition: all 0.3s ease;
+            width: 200px; /* Ajustez selon vos besoins */
+        }
+
+        .container {
+            width: 80%; /* Ajustez selon votre besoin */
+            max-width: 1200px; /* Pour éviter qu'elle ne devienne trop large */
+            margin: 0 auto; /* Centre horizontalement */
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centre les éléments à l'intérieur */
+            justify-content: center; /* Centre verticalement si nécessaire */
+            min-height: 100vh; /* Assure qu'elle prend toute la hauteur de la page */
         }
     </style>
 </head>
 <body>
     <img src="../static/images/psg_logo.png"/>
-    <br>
-   <label for="player-name">Nom :</label>
-    <input type="text" id="searchBar" placeholder="Rechercher un joueur..." onkeyup="SearchPlayers()">
-    
+    <label for="player-name">Nom :</label>
+        <input type="text" id="searchBar" placeholder="Rechercher un joueur..." onkeyup="SearchPlayers()">
+        
     <label for="countryFilter">Filtrer par pays :</label>
-    <select id="countryFilter">
-        <option value="all"></option>
-    </select>
+        <select class="select" id="countryFilter">
+            <option value="all"></option>
+        </select>
 
     <label for="positionFilter">Filtrer par position :</label>
-    <select id="positionFilter">
-        <option value="all"></option>
-    </select>
-    
+        <select class="select" id="positionFilter">
+            <option value="all"></option>
+        </select>
+        
     <label for="roleFilter">Filtrer par role :</label>
-    <select id="roleFilter">
-        <option value="all"></option>
-    </select>
+        <select class="select" id="roleFilter">
+            <option value="all"></option>
+        </select>
     
-    <br>
-    <table id="playersTable">
-            <tr>
+    <div class="container">
+        
+        <br>
+        <table id="playersTable">
                 <tr>
-                    <td><a href="/donnarumma" ><div data-name="Gianluigi Donnarumma"  data-number="1" data-position="Gardien de but" data-country="Italie" data-role="GK"><img width="200" height="263.234" src="../static/images/donnarumma.avif"/></div></a></td>
-                    <td><a href="/safonov"><div data-name="Matvei Safonov"  data-number="39" data-position="Gardien de but" data-country="Russie" data-role="GK"><img width="200" height="263.234" src="../static/images/safonov.avif"/></div></a></td>
-                    <td><a href="/tenas"><div data-name="Arnau Tenas"  data-number="80" data-position="Gardien de but" data-country="Espagne" data-role="GK"><img width="200" height="263.234" src="../static/images/tenas.avif"/></div></a></td>
-                    <td><a href="/hakimi"><div data-name="Achraf Hakimi"  data-number="2" data-position="Défenseur" data-country="Maroc" data-role="DD"><img width="200" height="263.234" src="../static/images/hakimi.avif"/></div></a></td>
+                    <tr>
+                        <td><a href="/donnarumma" ><div data-name="Gianluigi Donnarumma"  data-number="1" data-position="Gardien de but" data-country="Italie" data-role="GK"><img width="200" height="263.234" src="../static/images/donnarumma.avif"/></div></a></td>
+                        <td><a href="/safonov"><div data-name="Matvei Safonov"  data-number="39" data-position="Gardien de but" data-country="Russie" data-role="GK"><img width="200" height="263.234" src="../static/images/safonov.avif"/></div></a></td>
+                        <td><a href="/tenas"><div data-name="Arnau Tenas"  data-number="80" data-position="Gardien de but" data-country="Espagne" data-role="GK"><img width="200" height="263.234" src="../static/images/tenas.avif"/></div></a></td>
+                        <td><a href="/hakimi"><div data-name="Achraf Hakimi"  data-number="2" data-position="Défenseur" data-country="Maroc" data-role="DD"><img width="200" height="263.234" src="../static/images/hakimi.avif"/></div></a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="/kimpembe"><div data-name="Presnel Kimpembe"  data-number="3" data-position="Défenseur" data-country="France" data-role="DC"><img width="200" height="263.234" src="../static/images/kimpembe.avif"/></div></a></td>
+                        <td><a href="/marquinhos"><div data-name="Marquinhos"  data-number="5" data-position="Défenseur" data-country="Brésil" data-role="DC"><img width="200" height="263.234" src="../static/images/marquinhos.avif"/></div></a></td>
+                        <td><a href="/hernandez"><div data-name="Lucas Hernandez"  data-number="21" data-position="Défenseur" data-country="France" data-role="DC"><img width="200" height="263.234" src="../static/images/hernandez.avif"/></div></a></td>
+                        <td><a href="/mendes"><div data-name="Nuno Mendes"  data-number="25" data-position="Défenseur" data-country="Portugal" data-role="DG"><img width="200" height="263.234" src="../static/images/mendes.avif"/></div></a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="/beraldo"><div data-name="Lucas Beraldo"  data-number="25" data-position="Défenseur" data-country="Brésil" data-role="DC"><img width="200" height="263.234" src="../static/images/beraldo.avif"/></div></a></td>
+                        <td><a href="/zague"><div data-name="Yoram Zague"  data-number="42" data-position="Défenseur" data-country="France" data-role="DD"><img width="200" height="263.234" src="../static/images/zague.avif"/></div></a></td>
+                        <td><a href="/pacho"><div data-name="Willian Pacho"  data-number="51" data-position="Défenseur" data-country="Equateur" data-role="DC"><img width="200" height="263.234" src="../static/images/pacho.avif"/></div></a></td>
+                        <td><a href="/ruiz"><div data-name="Fabian Ruiz"  data-number="8" data-position="Milieu de terrain" data-country="Espagne" data-role="MC"><img width="200" height="263.234" src="../static/images/ruiz.avif"/></div></a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="/vitinha"><div data-name="Vitinha"  data-number="17" data-position="Milieu de terrain" data-country="Portugal" data-role="MC"><img width="200" height="263.234" src="../static/images/vitinha.avif"/></div></a></td>
+                        <td><a href="/lee"><div data-name="Lee Kang-In"  data-number="19" data-position="Milieu de terrain" data-country="Corée du Sud" data-role="MOC"><img width="200" height="263.234" src="../static/images/lee.avif"/></div></a></td>
+                        <td><a href="/mayulu"><div data-name="Senny Mayulu"  data-number="24" data-position="Milieu de terrain" data-country="France" data-role="MOC"><img width="200" height="263.234" src="../static/images/mayulu.avif"/></div></a></td>
+                        <td><a href="/zaire-emery"><div data-name="Warren Zaïre-Emery"  data-number="33" data-position="Milieu de terrain" data-country="France" data-role="MC"><img width="200" height="263.234" src="../static/images/zaire_emery.avif"/></div></a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="/neves"><div data-name="Joao Neves"  data-number="87" data-position="Milieu de terrain" data-country="Portugal" data-role="MC"><img width="200" height="263.234" src="../static/images/neves.avif"/></div></a></td>
+                        <td><a href="/kvaratskhelia"><div data-name="Khvicha Kvaratskhelia"  data-number="7" data-position="Attaquant" data-country="Georgie" data-role="AG"><img width="200" height="263.234" src="../static/images/kvaratskhelia.avif"/></div></a></td>
+                        <td><a href="/ramos"><div data-name="Gonçalo Ramos"  data-number="9" data-position="Attaquant" data-country="Portugal" data-role="BU"><img width="200" height="263.234" src="../static/images/ramos.avif"/></div></a></td>
+                        <td><a href="/dembele"><div data-name="Ousmane Dembélé"  data-number="10" data-position="Attaquant" data-country="France" data-role="AD"><img width="200" height="263.234" src="../static/images/dembele.avif"/></div></a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="/doue"><div data-name="Désiré Doué"  data-number="14" data-position="Attaquant" data-country="France" data-role="MG"><img width="200" height="263.234" src="../static/images/doue.avif"/></div></a></td>
+                        <td><a href="/barcola"><div data-name="Bradley Barcola"  data-number="29" data-position="Attaquant" data-country="France" data-role="AG"><img width="200" height="263.234" src="../static/images/barcola.avif"/></div></a></td>
+                    </tr>
                 </tr>
-                <tr>
-                    <td><a href="/kimpembe"><div data-name="Presnel Kimpembe"  data-number="3" data-position="Défenseur" data-country="France" data-role="DC"><img width="200" height="263.234" src="../static/images/kimpembe.avif"/></div></a></td>
-                    <td><a href="/marquinhos"><div data-name="Marquinhos"  data-number="5" data-position="Défenseur" data-country="Brésil" data-role="DC"><img width="200" height="263.234" src="../static/images/marquinhos.avif"/></div></a></td>
-                    <td><a href="/hernandez"><div data-name="Lucas Hernandez"  data-number="21" data-position="Défenseur" data-country="France" data-role="DC"><img width="200" height="263.234" src="../static/images/hernandez.avif"/></div></a></td>
-                    <td><a href="/mendes"><div data-name="Nuno Mendes"  data-number="25" data-position="Défenseur" data-country="Portugal" data-role="DG"><img width="200" height="263.234" src="../static/images/mendes.avif"/></div></a></td>
-                </tr>
-                <tr>
-                    <td><a href="/beraldo"><div data-name="Lucas Beraldo"  data-number="25" data-position="Défenseur" data-country="Brésil" data-role="DC"><img width="200" height="263.234" src="../static/images/beraldo.avif"/></div></a></td>
-                    <td><a href="/zague"><div data-name="Yoram Zague"  data-number="42" data-position="Défenseur" data-country="France" data-role="DD"><img width="200" height="263.234" src="../static/images/zague.avif"/></div></a></td>
-                    <td><a href="/pacho"><div data-name="Willian Pacho"  data-number="51" data-position="Défenseur" data-country="Equateur" data-role="DC"><img width="200" height="263.234" src="../static/images/pacho.avif"/></div></a></td>
-                    <td><a href="/ruiz"><div data-name="Fabian Ruiz"  data-number="8" data-position="Milieu de terrain" data-country="Espagne" data-role="MC"><img width="200" height="263.234" src="../static/images/ruiz.avif"/></div></a></td>
-                </tr>
-                <tr>
-                    <td><a href="/vitinha"><div data-name="Vitinha"  data-number="17" data-position="Milieu de terrain" data-country="Portugal" data-role="MC"><img width="200" height="263.234" src="../static/images/vitinha.avif"/></div></a></td>
-                    <td><a href="/lee"><div data-name="Lee Kang-In"  data-number="19" data-position="Milieu de terrain" data-country="Corée du Sud" data-role="MOC"><img width="200" height="263.234" src="../static/images/lee.avif"/></div></a></td>
-                    <td><a href="/mayulu"><div data-name="Senny Mayulu"  data-number="24" data-position="Milieu de terrain" data-country="France" data-role="MOC"><img width="200" height="263.234" src="../static/images/mayulu.avif"/></div></a></td>
-                    <td><a href="/zaire-emery"><div data-name="Warren Zaïre-Emery"  data-number="33" data-position="Milieu de terrain" data-country="France" data-role="MC"><img width="200" height="263.234" src="../static/images/zaire_emery.avif"/></div></a></td>
-                </tr>
-                <tr>
-                    <td><a href="/neves"><div data-name="Joao Neves"  data-number="87" data-position="Milieu de terrain" data-country="Portugal" data-role="MC"><img width="200" height="263.234" src="../static/images/neves.avif"/></div></a></td>
-                    <td><a href="/kvaratskhelia"><div data-name="Khvicha Kvaratskhelia"  data-number="7" data-position="Attaquant" data-country="Georgie" data-role="AG"><img width="200" height="263.234" src="../static/images/kvaratskhelia.avif"/></div></a></td>
-                    <td><a href="/ramos"><div data-name="Gonçalo Ramos"  data-number="9" data-position="Attaquant" data-country="Portugal" data-role="BU"><img width="200" height="263.234" src="../static/images/ramos.avif"/></div></a></td>
-                    <td><a href="/dembele"><div data-name="Ousmane Dembélé"  data-number="10" data-position="Attaquant" data-country="France" data-role="AD"><img width="200" height="263.234" src="../static/images/dembele.avif"/></div></a></td>
-                </tr>
-                <tr>
-                    <td><a href="/doue"><div data-name="Désiré Doué"  data-number="14" data-position="Attaquant" data-country="France" data-role="MG"><img width="200" height="263.234" src="../static/images/doue.avif"/></div></a></td>
-                    <td><a href="/barcola"><div data-name="Bradley Barcola"  data-number="29" data-position="Attaquant" data-country="France" data-role="AG"><img width="200" height="263.234" src="../static/images/barcola.avif"/></div></a></td>
-                </tr>
-            </tr>
-        </table>
-       
+            </table>
+        </div>
         <script src="../static/script.js"></script>
     </body>
 </html>

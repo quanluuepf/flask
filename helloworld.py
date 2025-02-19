@@ -58,6 +58,10 @@ def mayulu():
 def mendes():
     return render_template('mendes.html')
 
+@app.route('/neves')
+def neves():
+    return render_template('neves.html')
+
 @app.route('/pacho')
 def pacho():
     return render_template('pacho.html')
